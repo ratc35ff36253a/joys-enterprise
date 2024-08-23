@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import StyledButton from '../components/StyledButton';
 
-const Home = React.FC = () => {
+const Home: React.FC = () => {
 	// Theme context
 	const { theme, setTheme } = useTheme();
 
@@ -24,7 +24,7 @@ const Home = React.FC = () => {
 			<button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
 			Toggle theme
 			</button>
-			<StyledButton>Click Me</StyledButton>
+			<StyledButton onClick={() => console.log('Button clicked')}>Click Me</StyledButton>
 			</div>
 		);
 };

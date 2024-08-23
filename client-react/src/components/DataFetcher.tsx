@@ -2,7 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const DataFetcher: React.FC = () => {
+interface DataFetcherProps {
+	children: React.ReactNode;
+}
+
+const DataFetcher: React.FC<DataFetcherProps> = ({ children }) => {
 	const [data, setData] = useState<string[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
@@ -36,6 +40,7 @@ const DataFetcher: React.FC = () => {
 			<li key={index}>{item}</li>
 		))}
 		</ul>
+		{children}
 		</div>
 	);
 };
