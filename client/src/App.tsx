@@ -1,22 +1,29 @@
 // client/src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import ClientLayout from './layouts/ClientLayout';
+import UserProfile from './pages/UserProfile';
+import Navbar from from './components/Navbar';
+import Footer from './components/Footer';
+import MainLayout from './layouts/MainLayout';
+import DataFetcher from './components/DataFetcher';
+import './styles/global.css';
 
 
 const App: React.FC = () => {
 	return (
 		<Router>
-		<ClientLayout>
-		<switch>
-		<Route path="/" exact component={Home} />
-		<Route path="/about" component={About} />
-		<Route path="/user/:id" component={UserProfile} />
+		<MainLayout>
+		<DataFetcher>
+		<Routes>
+		<Route path="/" exact element={<Home />} />
+		<Route path="/about" element={<About />} />
+		<Route path="/profile" element={<UserProfile />} />
 		{/* Add more routes as needed */}
-		</switch>
-		</ClientLayout>
+		</Routes>
+		</DataFetcher>
+		</MainLayout>
 		</Router>
 	);
 };

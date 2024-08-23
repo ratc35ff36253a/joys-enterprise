@@ -1,17 +1,16 @@
 // client/src/components/StyledButton.tsx
-import styled from 'styled-components';
+import React from 'react';
+import '../styles/styled-button.css'; // Import button-specific styles
 
-const StyledButton = styled.button`
-background-color: #007bff;
-color: white;
-border: none;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-
-&:hover {
-	background-color: #0056b3;
+interface StyledButtonProps {
+	onClick: () => void;
+	children: React.ReactNode;
 }
-`;
+
+const StyledButton: React.FC<StyledButtonProps> = ({ onClick, children }) => (
+	<button className="styled-button" onClick={onClick}>
+	{children}
+	</button>
+);
 
 export default StyledButton;
