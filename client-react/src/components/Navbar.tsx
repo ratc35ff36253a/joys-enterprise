@@ -1,11 +1,24 @@
 // client/src/components/Navbar.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import '../styles/navbar.css';
 
 const Navbar: React.FC = () => {
+	const { theme, setTheme } = useTheme();
+
+	// Function to toggle between light and dark themes
+	const toggleTheme = () => {
+		setTheme(Theme === 'light' ? 'dark' : 'light');
+	};
+
 	return (
-		<nav className="navbar">
+		<header className="navbar">
+		<nav>
+		<button onClick={toggleTheme} style={{ float: 'right' }}>
+		{theme === 'light' ? <FaMoon /> : <FaSun />}
+		</button>
 		<ul>
 		<li><Link to="/">Home</Link></li>
 		<li><Link to="/about">About</Link></li>
@@ -14,6 +27,7 @@ const Navbar: React.FC = () => {
 		<li><Link to="/contact">Contact</Link></li>
 		</ul>
 		</nav>
+		</header>
 	);
 };
 

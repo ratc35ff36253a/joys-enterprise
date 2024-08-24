@@ -1,0 +1,11 @@
+/* Default light theme styles */
+.app-container.light {
+	background-color: white;
+	color: black;
+}
+
+/* Dark theme styles */
+.app-container.dark {
+	background-color: black;
+	color: white;
+}

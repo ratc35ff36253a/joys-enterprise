@@ -1,3 +1,35 @@
+/* Ensure the icon container is visible */
+.icon-container {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 1000;               /* Ensure it’s above other content */
+}
+
+/* Ensure button styling doesn’t hide icons */
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* Theme-specific styles for the body */
+body.light {
+	background-color: #fff;
+	color: #000;
+}
+
+body.dark {
+	background-color: #333;
+	color: #fff;
+}
+
+/* Ensure smooth transitions for theme changes on header, footer, and main sections */
+header, footer, main {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* General reset and layout setup */
 * {
 	margin: 0;
 	padding: 0;

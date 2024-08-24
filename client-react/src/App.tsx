@@ -7,6 +7,7 @@ import UserProfile from './pages/UserProfile';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainLayout from './layouts/MainLayout';
+import ThemeToggle from './components/ThemeToggle';
 import DataFetcher from './components/DataFetcher';
 import './styles/global.css';
 
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         return (
                 <Router>
                 <MainLayout>
+		<ThemeToggle />
                 <DataFetcher>
                 <Routes>
                 <Route path="/" element={<Home />} />
