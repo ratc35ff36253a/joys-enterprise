@@ -10,7 +10,7 @@ const ThemeToggle: React.FC = () => {
 	};
 
 	return (
-		<button onClick={toggleTheme} style={{ position: 'absolute', right: '1rem', top: '1rem' }}>
+		<button className="theme-toggle" onClick={toggleTheme}>
 		{theme === 'light' ? <FaMoon /> : <FaSun />}
 		</button>
 	);

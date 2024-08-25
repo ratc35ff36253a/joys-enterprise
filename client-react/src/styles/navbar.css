@@ -1,22 +1,19 @@
 /* src/styles/navbar.css */
-header nav {
+.navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
-}
-
-.navbar {
-	background: #333;
-	color: white;
 	padding: 10px 20px;
+	background-color: #333;
+	color: white;
 }
 
 .navbar ul {
+	display: flex;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: flex;
+	flex-grow: -1;
 }
 
 .navbar ul li {
@@ -32,10 +29,20 @@ header nav {
 	text-decoration: underline;
 }
 
+.theme-toggle-container {
+	display: flex;
+	justify-content: flex-end;
+	flex-grow: 0;
+}
+
 .theme-toggle {
 	background: none;
 	border: none;
-	font-size: 1.5rem;
+	color: white;
+	font-size: 24px;
 	cursor: pointer;
 	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

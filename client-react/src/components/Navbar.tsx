@@ -10,15 +10,12 @@ const Navbar: React.FC = () => {
 
 	// Function to toggle between light and dark themes
 	const toggleTheme = () => {
-		setTheme(Theme === 'light' ? 'dark' : 'light');
+		setTheme(theme === 'light' ? 'dark' : 'light');
 	};
 
 	return (
 		<header className="navbar">
 		<nav>
-		<button onClick={toggleTheme} style={{ float: 'right' }}>
-		{theme === 'light' ? <FaMoon /> : <FaSun />}
-		</button>
 		<ul>
 		<li><Link to="/">Home</Link></li>
 		<li><Link to="/about">About</Link></li>
@@ -26,6 +23,11 @@ const Navbar: React.FC = () => {
 		<li><Link to="/services">Services</Link></li>
 		<li><Link to="/contact">Contact</Link></li>
 		</ul>
+		<div className="theme-toggle-container">
+		<button className="theme-toggle" onClick={toggleTheme}>
+                {theme === 'light' ? <FaMoon /> : <FaSun />}
+                </button>
+		</div>
 		</nav>
 		</header>
 	);
